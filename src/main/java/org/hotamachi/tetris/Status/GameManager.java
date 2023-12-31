@@ -1,8 +1,5 @@
 package org.hotamachi.tetris.Status;
 
-import org.hotamachi.tetris.Tetris;
-import org.hotamachi.tetris.game.Mino;
-
 public class GameManager {
     private GameState currentState = GameState.WAITING;
     private Tetrimino currentTetrimino;  // add a Tetrimino field to the class
@@ -42,13 +39,22 @@ public class GameManager {
         }
     }
 
-    public void rotateTetrimino() { //回転処理の追加
-        if (currentTetrimino != null) {  // only rotate if there is a Tetrimino
-            currentTetrimino.rotate();  // call the rotate method of the Tetrimino
-        }
-    }
+    public void rotateTetrimino() {
+        int size = shape.length;
+        Mino.BlockType[][] newShape = new Mino.BlockType[size][size];
 
-    public Mino getCurrentMino() {
-        return null;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                newShape[j][size - 1 - i] = shape[i][j];
+            }
+        }
+
+        // 衝突判定などのロジックをここに追加
+
+        // 回転を適用
+        shape = newShape;
     }
+}
+
+
 }

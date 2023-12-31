@@ -36,10 +36,22 @@ public class Mino {
 
 
 
-  public static void rotateTetrimino() { //回転処理の追加
+    public void rotateTetrimino() {
+        int size = shape.length;
+        BlockType[][] newShape = new BlockType[size][size];
 
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                newShape[j][size - 1 - i] = shape[i][j];
+            }
+        }
+
+        // 衝突判定などのロジックをここに追加
+
+        // 回転を適用
+        shape = newShape;
     }
-  public void Break(){ //衝突判定
-
-  }
 }
+
+
+
