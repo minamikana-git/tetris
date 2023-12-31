@@ -1,10 +1,8 @@
-package org.hotamachi.tetris.game;
-
+package org.hotamachi.tetris.Status;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.hotamachi.tetris.Status.GameManager;
 
 
 public class TetrisInputListener implements Listener {
@@ -19,7 +17,7 @@ public class TetrisInputListener implements Listener {
         // プレイヤーのアクションに応じてテトリミノを動かす
         // 例: 右クリックでテトリミノを回転
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-           gameManager.rotateTetrimino();
+            gameManager.rotateTetrimino();
         }
 
 
@@ -30,4 +28,3 @@ public class TetrisInputListener implements Listener {
         }
     }
 }
-

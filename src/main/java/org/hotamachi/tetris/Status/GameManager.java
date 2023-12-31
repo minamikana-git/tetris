@@ -1,5 +1,8 @@
 package org.hotamachi.tetris.Status;
 
+import org.hotamachi.tetris.Tetris;
+
+
 public class GameManager {
     private GameState currentState = GameState.WAITING;
     private Tetrimino currentTetrimino;  // add a Tetrimino field to the class
