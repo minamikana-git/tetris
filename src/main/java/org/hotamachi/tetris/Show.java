@@ -2,7 +2,6 @@ package org.hotamachi.tetris;
 
 import org.bukkit.World;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.hotamachi.tetris.game.Mino;
 
 public class Show {
