@@ -3,42 +3,24 @@ package org.hotamachi.tetris.game;
 import java.awt.*;
 import java.util.Random;
 
-import static java.awt.Color.*;
-import static org.bukkit.Color.PURPLE;
-import static org.hotamachi.tetris.game.Mino.BlockType.EMPTY;
+import static org.hotamachi.tetris.game.Mino.BlockType.*;
 
 public class Next {
     private Mino currentMino;
     private Mino nextMino;
     private Random random;
+    private Mino.BlockType[][][] shapes;
 
     public Next() {
         random = new Random();
+        initializeShapes();
         currentMino = generateRandomMino();
         nextMino = generateRandomMino();
     }
 
-    private Mino.BlockType[][] iShape = {
+    private void initializeShapes() {
+    }
 
-    };
-    private Mino.BlockType[][] oShape = {
-
-    };
-    private Mino.BlockType[][] sShape = {
-
-    };
-    private Mino.BlockType[][] zShape = {
-
-    };
-    private Mino.BlockType[][] jShape = {
-
-    };
-    private Mino.BlockType[][] lShape = {
-
-    };
-    private Mino.BlockType[][] tShape = {
-
-    };
 
 
 
