@@ -18,6 +18,8 @@ public class Mino {
 
 
 
+
+
     public BlockType[][] getShape() {
         return shape;
     }
