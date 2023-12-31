@@ -1,31 +1,38 @@
 package org.hotamachi.tetris.game;
 
 public class Mino {
-
-    private BlockType[][] shape;
+    private BlockType[][] shape; // テトリミノの形状
     private int x, y; // ボード上の位置
 
     public Mino(BlockType[][] shape) {
         this.shape = shape;
-        this.x = 100;
-        this.y = 20;
+        this.x = 100; // 初期x位置
+        this.y = 20;  // 初期y位置
     }
 
-    public static BlockType[][] getShape() {
-        return new BlockType[0][];
+    public enum BlockType {
+        EMPTY, // 空のセル
+        FILLED // 塗りつぶされたセル
+        // 必要に応じて他のタイプを追加
     }
 
-    // テトリミノを動かすメソッド（左、右、下、回転など）
-    // 衝突判定などのロジックをここに追加
-  public void Leftmove() { //左移動
 
-  }
-  public void Rightmove(){ //右移動
 
+    public BlockType[][] getShape() {
+        return shape;
     }
-  public void Downmove(){ //下移動
 
-  }
+    public void LeftMove() {
+        x--; // 左に移動
+    }
+
+    public void RightMove() {
+        x++; // 右に移動
+    }
+
+    public void DownMove() {
+        y++; // 下に移動
+    }
 
 
 

@@ -1,12 +1,17 @@
 package org.hotamachi.tetris.Status;
 
 import org.hotamachi.tetris.Tetris;
+import org.hotamachi.tetris.game.Mino;
 
 public class GameManager {
     private GameState currentState = GameState.WAITING;
     private Tetrimino currentTetrimino;  // add a Tetrimino field to the class
 
     public GameManager(Tetris tetris) {
+    }
+
+    public static GameManager getGame() {
+        return null;
     }
 
     public void startGame() {
@@ -41,5 +46,9 @@ public class GameManager {
         if (currentTetrimino != null) {  // only rotate if there is a Tetrimino
             currentTetrimino.rotate();  // call the rotate method of the Tetrimino
         }
+    }
+
+    public Mino getCurrentMino() {
+        return null;
     }
 }
