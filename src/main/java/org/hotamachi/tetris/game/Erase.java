@@ -1,2 +1,4 @@
-package org.hotamachi.tetris.game;public class erase {
+package org.hotamachi.tetris.game;
+
+public class Erase {
 }
