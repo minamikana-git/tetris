@@ -19,60 +19,69 @@ public class Next {
     }
 
     private void initializeShapes() {
+        shapes = new Mino.BlockType[][][]{
+                {
+                        {EMPTY, EMPTY, EMPTY, EMPTY},
+                        {CYAN, CYAN, CYAN, CYAN},
+                        {EMPTY, EMPTY, EMPTY, EMPTY},
+                        {EMPTY, EMPTY, EMPTY, EMPTY}
+                },
+                {
+                        {YELLOW, YELLOW},
+                        {YELLOW, YELLOW}
+                },
+                shapes = new Mino.BlockType[][][]{
+                        {
+                                {EMPTY, GREEN, GREEN},
+                                {GREEN, GREEN, EMPTY},
+                                {EMPTY, EMPTY, EMPTY}
+                        },
+                        {
+                                {RED, RED, EMPTY},
+                                {EMPTY, RED, RED}
+                        },
+                        shapes = new Mino.BlockType[][][]{
+                                {
+                                        {BLUE, EMPTY, EMPTY},
+                                        {BLUE, BLUE, BLUE},
+                                        {EMPTY, EMPTY, EMPTY}
+                                },
+                                shapes = new Mino.BlockType[][][]{
+
+                                        {ORANGE, ORANGE, ORANGE},
+                                        {ORANGE, EMPTY, EMPTY}
+                                },
+                                shapes = new Mino.BlockType[][][]{
+
+                                        {{EMPTY, PURPLE, EMPTY},
+                                                {PURPLE, PURPLE, PURPLE},
+                                                {EMPTY, EMPTY, EMPTY},
+                                        }
+
+                                }
+                        }
+                }
+        };
     }
 
 
 
 
-    private enum block {
 
 
-        private Mino.BlockType[][] iShape = {
-                {EMPTY, EMPTY, EMPTY, EMPTY},
-                {CYAN, CYAN, CYAN, CYAN},
-                {EMPTY, EMPTY, EMPTY, EMPTY},
-                {EMPTY, EMPTY, EMPTY, EMPTY}
-        };
-        private Color[][] oShape = {
-                {YELLOW, YELLOW},
-                {YELLOW, YELLOW}
-        };
-        private Mino.BlockType[][] sShape = {
-                {EMPTY, GREEN, GREEN},
-                {GREEN, GREEN, EMPTY},
-                {EMPTY, EMPTY, EMPTY}
-        };
-        private Mino.BlockType[][] zShape = {
-                {RED, RED, EMPTY},
-                {EMPTY, RED, RED},
-                {EMPTY, EMPTY, EMPTY}
-        };
-        private Mino.BlockType[][] jShape = {
-                {BLUE, EMPTY, EMPTY},
-                {BLUE, BLUE, BLUE},
-                {EMPTY, EMPTY, EMPTY}
-        };
-        private Color[][] lShape = {
-                {Mino.BlockType.EMPTY, EMPTY, ORANGE},
-                {ORANGE, ORANGE, ORANGE},
-                {EMPTY, EMPTY, EMPTY}
-        };
-        private org.bukkit.Color[][] tShape = {
-                {EMPTY, PURPLE, EMPTY},
-                {PURPLE, PURPLE, PURPLE},
-                {EMPTY, EMPTY, EMPTY}
-        };
-    }
+
+
+
+
+
+
+
 
     private Mino generateRandomMino() {
         Mino.BlockType[][][] shapes = {iShape, oShape, sShape, zShape, jShape, lShape, tShape};
         int index = new Random().nextInt(shapes.length);
         return new Mino(shapes[index]);
     }
-
-
-
-
 
 
     public void nextTurn() {
