@@ -5,6 +5,7 @@ import org.hotamachi.tetris.game.Mino;
 
 
 public class GameManager {
+
     private Mino.BlockType[][] shape;
     private GameState currentState = GameState.WAITING;
     private Tetrimino currentTetrimino;  // add a Tetrimino field to the class
