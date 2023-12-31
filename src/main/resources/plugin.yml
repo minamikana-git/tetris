@@ -1,0 +1,5 @@
+name: tetris
+version: '${project.version}'
+main: org.hotamachi.tetris.Tetris
+api-version: '1.20'
+load: STARTUP
