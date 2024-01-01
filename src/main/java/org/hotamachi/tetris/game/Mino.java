@@ -50,7 +50,8 @@ public class Mino {
         RED, 
         BLUE, 
         ORANGE, 
-        PURPLE 
+        PURPLE;
+        public static int[][] newShape;
     }
 
     private Material getMaterial(BlockType type) {

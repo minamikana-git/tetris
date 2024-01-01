@@ -1,17 +1,19 @@
 package org.hotamachi.tetris.Status;
 
+import org.hotamachi.tetris.game.Mino;
+
 public class Tetrimino {
-    private int[][] shape;
+    private Mino.BlockType[][] shape;
     private int rotationState;
 
     public Tetrimino() {
         this.shape = shape;
-        this.rotationState = 0;
+        this.rotationState = 0; // 初期の回転状態を0に設定
     }
 
     public void rotate() {
         int size = this.shape.length;
-        int[][] tempShape = new int[size][size];
+        Mino.BlockType[][] tempShape = new Mino.BlockType[size][size];
 
         for (int i = 0; i < size; ++i) {
             for (int j = 0; j < size; ++j) {
@@ -20,14 +22,14 @@ public class Tetrimino {
         }
 
         this.shape = tempShape;
-        this.rotationState = (this.rotationState + 1) % 4;
+        this.rotationState = (this.rotationState + 90) % 360; // 回転状態を更新
     }
-    public int[][] getShape() {
+
+    public Mino.BlockType[][] getShape() {
         return shape;
     }
 
-    public void setShape(int[][] newShape) {
+    public void setShape(Mino.BlockType[][] newShape) {
         this.shape = newShape;
     }
-
 }
