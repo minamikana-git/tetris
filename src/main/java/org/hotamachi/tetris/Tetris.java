@@ -11,6 +11,7 @@ public class Tetris extends JavaPlugin { //メインクラス
     @Override
     public void onEnable() {
         gameManager = new GameManager(this);
+
         getServer().getPluginManager().registerEvents(new TetrisInputListener(gameManager), this);
         // 他の初期化処理（イベントリスナーの登録など）
 
