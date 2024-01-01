@@ -66,21 +66,6 @@ public class Next {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private Mino generateRandomMino() {
         int index = random.nextInt(shapes.length);
         return new Mino(shapes[index]);
