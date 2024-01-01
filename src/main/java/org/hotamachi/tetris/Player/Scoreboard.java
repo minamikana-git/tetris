@@ -1,6 +1,6 @@
 package org.hotamachi.tetris.Player;
 
-public class Scores {
+public class Scoreboard {
     private int score;
 
     public void Scoreboard() {

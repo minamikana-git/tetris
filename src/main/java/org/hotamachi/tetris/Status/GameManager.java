@@ -1,6 +1,6 @@
 package org.hotamachi.tetris.Status;
 
-import org.hotamachi.tetris.Player.Scores;
+import org.hotamachi.tetris.Player.Scoreboard;
 import org.hotamachi.tetris.Tetris;
 import org.hotamachi.tetris.game.Mino;
 
@@ -11,7 +11,7 @@ public class GameManager {
     private GameState currentState = GameState.WAITING;
     private Tetrimino currentTetrimino;  // 現在のテトリミノ
 
-    private Scores scores;
+    private Scoreboard scoreboard;
 
     public enum GameState {
         WAITING, // ゲーム待機中
@@ -20,10 +20,12 @@ public class GameManager {
     }
 
     public GameManager(Tetris tetris) {
-      scores = new Scores();
+        scoreboard = new Scoreboard();
+        // 他の初期化処理
     }
+
     public void lineCleared(int lines) {
-        scores.addScore(lines);
+        scoreboard.addScore(lines);
         // ライン消去時の他の処理
     }
     public static GameManager getGame() {
