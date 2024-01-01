@@ -84,7 +84,7 @@ public class Next {
     }
 
     private void displayNextMino() {
-        // NextエリアにnextMinoを表示する処理
+
     }
 
 }
