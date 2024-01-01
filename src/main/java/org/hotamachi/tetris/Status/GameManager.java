@@ -63,20 +63,24 @@ public class GameManager {
     }
 
     public void rotateTetrimino() {
-        int size = shape.length;
-        Mino.BlockType[][] newShape = new Mino.BlockType[size][size];
+        if (currentTetrimino != null) {
+            int[][] shape = currentTetrimino.getShape();
+            int size = shape.length;
+            int[][] newShape = new int[size][size];
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                newShape[j][size - 1 - i] = shape[i][j];
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    newShape[j][size - 1 - i] = shape[i][j];
+                }
             }
+
+            // 衝突判定などのロジックをここに追加
+
+            // 回転を適用
+            currentTetrimino.setShape(newShape);
         }
-
-        // 衝突判定などのロジックをここに追加
-
-        // 回転を適用
-        shape = newShape;
     }
+
 }
 
 

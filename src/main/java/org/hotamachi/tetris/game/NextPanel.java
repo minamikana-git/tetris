@@ -3,7 +3,6 @@ package org.hotamachi.tetris.game;
 import javax.swing.*;
 import java.awt.*;
 
-import static org.hotamachi.tetris.game.Mino.BlockType.*;
 
 public class NextPanel extends JPanel {
     private Mino nextMino;

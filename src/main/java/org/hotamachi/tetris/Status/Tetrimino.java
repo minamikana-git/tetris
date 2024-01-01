@@ -22,4 +22,12 @@ public class Tetrimino {
         this.shape = tempShape;
         this.rotationState = (this.rotationState + 1) % 4;
     }
+    public int[][] getShape() {
+        return shape;
+    }
+
+    public void setShape(int[][] newShape) {
+        this.shape = newShape;
+    }
+
 }

@@ -1,61 +1,68 @@
 package org.hotamachi.tetris.game;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.World;
+import org.bukkit.block.Block;
+
 public class Mino {
-    private BlockType[][] shape; // テトリミノの形状
-    private int x, y; // ボード上の位置
+    private BlockType[][] shape;
+    private int x, y, z; // ミノのワールド内の座標
+
+    public Mino(BlockType[][] shape, int x, int y, int z) {
+        this.shape = shape;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    Mino mino = new Mino(shape, x, y, z);
+
+    World world = Bukkit.getWorld("world");
 
     public Mino(BlockType[][] shape) {
-        this.shape = shape;
-        this.x = 100; // 初期x位置
-        this.y = 20;  // 初期y位置
     }
 
-    // Enum BlockTypeの修正
-    public enum BlockType {
-        EMPTY, // 空のセル
-        FILLED, // 塗りつぶされたセル
-        CYAN, // 水色
-        YELLOW, // 黄色
-        GREEN, // 緑
-        RED, // 赤
-        BLUE, // 青
-        ORANGE, // オレンジ
-        PURPLE // 紫
-        // ... 他の色やブロックタイプ
+    public void placeInWorld() {
+        for (int i = 0; i < shape.length; i++) {
+            for (int j = 0; j < shape[i].length; j++) {
+                if (shape[i][j] != BlockType.EMPTY) {
+                    Block block = world.getBlockAt(x + j, y - i, z);
+                    block.setType(getMaterial(shape[i][j]));
+                }
+            }
+        }
     }
 
-    // テトリミノの形状を取得
     public BlockType[][] getShape() {
         return shape;
     }
 
-    // 左に移動
-    public void leftMove() {
-        x--;
+    public BlockType[][] getBlocks() {
+        return new BlockType[0][];
     }
 
-    // 右に移動
-    public void rightMove() {
-        x++;
+    public enum BlockType {
+        EMPTY, 
+        CYAN, 
+        YELLOW, 
+        GREEN, 
+        RED, 
+        BLUE, 
+        ORANGE, 
+        PURPLE 
     }
 
-    // 下に移動
-    public void downMove() {
-        y++;
-    }
-
-    // テトリミノの回転
-    public void rotateTetrimino() {
-        int size = shape.length;
-        BlockType[][] newShape = new BlockType[size][size];
-
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                newShape[j][size - 1 - i] = shape[i][j];
-            }
+    private Material getMaterial(BlockType type) {
+        switch (type) {
+            case CYAN: return Material.CYAN_WOOL;
+            case YELLOW: return Material.YELLOW_WOOL;
+            case GREEN: return Material.GREEN_WOOL;
+            case RED: return Material.RED_WOOL;
+            case BLUE: return Material.BLUE_WOOL;
+            case ORANGE: return Material.ORANGE_WOOL;
+            case PURPLE: return Material.PURPLE_WOOL;
+            default: return Material.AIR;
         }
-
-        // 回転を適用
-        shape = newShape;
     }
 }

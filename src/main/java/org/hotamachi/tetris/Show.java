@@ -11,8 +11,8 @@ public class Show {
 
     public Show(World world, int startX, int startY, int startZ) {
         this.world = world;
-        this.startX = startX;
-        this.startY = startY;
+        this.startX = 100;
+        this.startY = 20;
         this.startZ = startZ;
     }
         public void displayTetrimino(Mino mino) {

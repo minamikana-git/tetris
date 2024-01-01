@@ -84,7 +84,15 @@ public class Next {
     }
 
     private void displayNextMino() {
+        Mino.BlockType[][] nextShape = nextMino.getBlocks();
 
+        System.out.println("Next Mino:");
+        for (Mino.BlockType[] row : nextShape) {
+            for (Mino.BlockType block : row) {
+                char symbol = block == Mino.BlockType.EMPTY ? ' ' : '#';
+                System.out.print(symbol);
+            }
+            System.out.println();
+        }
     }
-
 }
