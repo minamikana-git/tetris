@@ -8,7 +8,13 @@ public class GameManager {
 
     private Mino.BlockType[][] shape;
     private GameState currentState = GameState.WAITING;
-    private Tetrimino currentTetrimino;  // add a Tetrimino field to the class
+    private Tetrimino currentTetrimino;  // 現在のテトリミノ
+
+    public enum GameState {
+        WAITING, // ゲーム待機中
+        IN_GAME, // ゲームプレイ中
+        GAME_OVER // ゲームオーバー
+    }
 
     public GameManager(Tetris tetris) {
     }
