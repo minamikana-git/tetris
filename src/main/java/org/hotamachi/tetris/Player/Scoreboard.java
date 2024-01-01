@@ -1,9 +1,12 @@
 package org.hotamachi.tetris.Player;
 
+import org.bukkit.entity.Player;
 import org.hotamachi.tetris.game.ScoreboardManager;
 
 public class Scoreboard {
     private int score;
+
+    Player player;
     private ScoreboardManager scoreboardManager;
 
     public Scoreboard() {
