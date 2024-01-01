@@ -10,34 +10,41 @@ public class Mino {
         this.y = 20;  // 初期y位置
     }
 
+    // Enum BlockTypeの修正
     public enum BlockType {
         EMPTY, // 空のセル
-        FILLED // 塗りつぶされたセル
-        // 必要に応じて他のタイプを追加
+        FILLED, // 塗りつぶされたセル
+        CYAN, // 水色
+        YELLOW, // 黄色
+        GREEN, // 緑
+        RED, // 赤
+        BLUE, // 青
+        ORANGE, // オレンジ
+        PURPLE // 紫
+        // ... 他の色やブロックタイプ
     }
 
-
-
-
-
+    // テトリミノの形状を取得
     public BlockType[][] getShape() {
         return shape;
     }
 
-    public void LeftMove() {
-        x--; // 左に移動
+    // 左に移動
+    public void leftMove() {
+        x--;
     }
 
-    public void RightMove() {
-        x++; // 右に移動
+    // 右に移動
+    public void rightMove() {
+        x++;
     }
 
-    public void DownMove() {
-        y++; // 下に移動
+    // 下に移動
+    public void downMove() {
+        y++;
     }
 
-
-
+    // テトリミノの回転
     public void rotateTetrimino() {
         int size = shape.length;
         BlockType[][] newShape = new BlockType[size][size];
@@ -48,12 +55,7 @@ public class Mino {
             }
         }
 
-        // 衝突判定などのロジックをここに追加
-
         // 回転を適用
         shape = newShape;
     }
 }
-
-
-

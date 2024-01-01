@@ -3,9 +3,6 @@ package org.hotamachi.tetris.game;
 
 import java.util.Random;
 
-import static java.awt.Color.*;
-import static org.hotamachi.tetris.game.Mino.BlockType.*;
-
 public class Next {
     private Mino currentMino;
     private Mino nextMino;
@@ -19,27 +16,16 @@ public class Next {
         nextMino = generateRandomMino();
     }
 
-    public enum BlockType {
-        EMPTY, // 空のブロック
-        CYAN, // 水色のブロック
-        YELLOW, // 黄色のブロック
-        GREEN, // 緑のブロック
-        RED, // 赤のブロック
-        BLUE, // 青のブロック
-        ORANGE, // オレンジのブロック
-        PURPLE // 紫のブロック
-        // ... 他の色やブロックタイプ
-    }
 
 
     private void initializeShapes() {
         shapes = new Mino.BlockType[][][]{
                 // I-テトリミノ
                 {
-                        {Mino.BlockType.EMPTY, EMPTY, EMPTY, EMPTY},
+                        {Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY},
                         {Mino.BlockType.CYAN, Mino.BlockType.CYAN, Mino.BlockType.CYAN, Mino.BlockType.CYAN},
-                        {Mino.BlockType.EMPTY, EMPTY, EMPTY, EMPTY},
-                        {Mino.BlockType.EMPTY, EMPTY, EMPTY, EMPTY}
+                        {Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY},
+                        {Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY}
                 },
                 // O-テトリミノ
                 {
@@ -49,35 +35,36 @@ public class Next {
                 // S-テトリミノ
                 {
                         {Mino.BlockType.EMPTY, Mino.BlockType.GREEN, Mino.BlockType.GREEN},
-                        {Mino.BlockType.GREEN, Mino.BlockType.GREEN, EMPTY},
-                        {Mino.BlockType.EMPTY, EMPTY, EMPTY}
+                        {Mino.BlockType.GREEN, Mino.BlockType.GREEN, Mino.BlockType.EMPTY},
+                        {Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY}
                 },
                 // Z-テトリミノ
                 {
-                        {Mino.BlockType.RED, Mino.BlockType.RED, EMPTY},
+                        {Mino.BlockType.RED, Mino.BlockType.RED, Mino.BlockType.EMPTY},
                         {Mino.BlockType.EMPTY, Mino.BlockType.RED, Mino.BlockType.RED},
-                        {Mino.BlockType.EMPTY, EMPTY, EMPTY}
+                        {Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY}
                 },
                 // J-テトリミノ
                 {
-                        {Mino.BlockType.BLUE, EMPTY, EMPTY},
+                        {Mino.BlockType.BLUE, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY},
                         {Mino.BlockType.BLUE, Mino.BlockType.BLUE, Mino.BlockType.BLUE},
-                        {Mino.BlockType.EMPTY, EMPTY, EMPTY}
+                        {Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY}
                 },
                 // L-テトリミノ
                 {
                         {Mino.BlockType.ORANGE, Mino.BlockType.ORANGE, Mino.BlockType.ORANGE},
-                        {Mino.BlockType.ORANGE, EMPTY, EMPTY},
-                        {Mino.BlockType.EMPTY, EMPTY, EMPTY}
+                        {Mino.BlockType.ORANGE, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY},
+                        {Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY}
                 },
                 // T-テトリミノ
                 {
-                        {Mino.BlockType.EMPTY, Mino.BlockType.PURPLE, EMPTY},
+                        {Mino.BlockType.EMPTY, Mino.BlockType.PURPLE, Mino.BlockType.EMPTY},
                         {Mino.BlockType.PURPLE, Mino.BlockType.PURPLE, Mino.BlockType.PURPLE},
-                        {Mino.BlockType.EMPTY, EMPTY, EMPTY}
+                        {Mino.BlockType.EMPTY, Mino.BlockType.EMPTY, Mino.BlockType.EMPTY}
                 }
         };
     }
+
 
 
 
