@@ -52,6 +52,8 @@ public class GameManager {
 
     // スコア管理や他のメソッドをここに追加
 
+
+
     public void pauseGame() { // ポーズ
         if (currentState == GameState.IN_GAME) {
             currentState = GameState.WAITING;
